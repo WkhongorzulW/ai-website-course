@@ -2,7 +2,7 @@
 
 export const teacher = {
   name: 'Хонгорзул',
-  title: 'iCode Academy · Master Teacher',
+  title: 'Master Teacher',
   facebook: 'https://www.facebook.com/khongorzul.275479',
   story: [
     '2022 онд 12-р ангиа төгсөөд кодын талаар юу ч мэдэхгүйгээр Pinecone Academy-д Fullstack Developer-ээр суралцаж эхэлсэн.',
