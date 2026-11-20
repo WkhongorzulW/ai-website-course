@@ -18,7 +18,7 @@
 
 ```bash
 npm install
-cp .env.example .env.local   # Supabase URL, publishable key-ээ оруулна
+# .env.production-ийн утгууд локалд ч ажиллана
 npm run dev
 ```
 
@@ -34,5 +34,5 @@ npm run dev
 ## GitHub Pages-д гаргах
 
 1. Settings → Pages → Source: **GitHub Actions**
-2. Settings → Secrets and variables → Actions → **Variables** табд `VITE_SUPABASE_URL`, `VITE_SUPABASE_ANON_KEY` нэмнэ (publishable key нууц биш, RLS хамгаална).
+2. Supabase URL болон publishable key `.env.production` файлд байгаа (нууц биш, RLS хамгаална). **service_role түлхүүрийг хэзээ ч энд бүү хийгээрэй.**
 3. `main` руу push хийхэд автоматаар гарна.
