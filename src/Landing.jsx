@@ -72,7 +72,7 @@ export default function Landing() {
       {/* Header */}
       <header className="sticky top-0 z-20 bg-cream/85 backdrop-blur border-b border-plum/5">
         <div className="mx-auto max-w-6xl flex items-center justify-between px-5 sm:px-8 h-16">
-          <a href="#" className="font-display font-bold text-lg">цаг<span className="text-coral">.</span>сайт</a>
+          <a href="#" className="font-display font-bold text-lg tracking-tight">wonderland<span className="text-coral">.</span></a>
           <nav className="hidden md:flex gap-7 text-sm font-semibold text-plum/70">
             <a href="#program" className="hover:text-plum">Хөтөлбөр</a>
             <a href="#format" className="hover:text-plum">Хэлбэр</a>
@@ -234,7 +234,7 @@ export default function Landing() {
       </Section>
 
       <footer className="bg-plum border-t border-cream/10 px-5 py-8 text-center text-sm text-cream/50">
-        © {new Date().getFullYear()} {teacher.name} · цаг.сайт
+        © {new Date().getFullYear()} Wonderland · {teacher.name}
       </footer>
     </main>
   )
