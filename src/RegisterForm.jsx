@@ -7,13 +7,13 @@ const empty = { name: '', phone: '', business_type: '', business_name: '', booki
 const Field = ({ label, optional, children }) => (
   <label className="block">
     <span className="mb-1.5 block text-sm font-bold">
-      {label} {optional && <span className="font-normal text-plum/50">(заавал биш)</span>}
+      {label} {optional && <span className="font-normal text-ink/50">(заавал биш)</span>}
     </span>
     {children}
   </label>
 )
 
-const input = 'w-full rounded-xl border-2 border-plum/10 bg-cream px-4 py-3 outline-none transition focus:border-coral focus:bg-white'
+const input = 'w-full rounded-xl border-2 border-ink/10 bg-cream px-4 py-3 outline-none transition focus:border-accent focus:bg-white'
 
 export default function RegisterForm() {
   const [form, setForm] = useState(empty)
@@ -58,7 +58,7 @@ export default function RegisterForm() {
       <div className="pop-in rounded-[2rem] bg-cream p-10 text-center">
         <div className="text-5xl mb-4">🎉</div>
         <h3 className="font-display font-bold text-2xl mb-3">Бүртгэл амжилттай!</h3>
-        <p className="text-plum/70 text-lg">Ойрын хоногуудад тань руу утсаар холбогдоно. Баярлалаа!</p>
+        <p className="text-ink/70 text-lg">Ойрын хоногуудад тань руу утсаар холбогдоно. Баярлалаа!</p>
       </div>
     )
   }
@@ -93,11 +93,11 @@ export default function RegisterForm() {
       <Field label="Асуулт, хүсэлт" optional>
         <textarea className={`${input} min-h-24`} value={form.message} onChange={set('message')} placeholder="Жишээ нь: ажлын өдрийн оройд л цаг гарна" />
       </Field>
-      {error && <p className="rounded-xl bg-coral/10 px-4 py-3 text-sm font-semibold text-coral-dark">{error}</p>}
+      {error && <p className="rounded-xl bg-accent/10 px-4 py-3 text-sm font-semibold text-accent-dark">{error}</p>}
       <button
         type="submit"
         disabled={status === 'sending'}
-        className="w-full rounded-full bg-coral py-4 font-bold text-white text-lg transition hover:bg-coral-dark disabled:opacity-60"
+        className="w-full rounded-full bg-accent py-4 font-bold text-white text-lg transition hover:bg-accent-dark disabled:opacity-60"
       >
         {status === 'sending' ? 'Илгээж байна…' : 'Суудлаа баталгаажуулах →'}
       </button>
