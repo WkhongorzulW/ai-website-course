@@ -40,12 +40,17 @@ function Dashboard({ session }) {
   const [err, setErr] = useState('')
   const [copied, setCopied] = useState(false)
 
-  async function load() {
-    const { data, error } = await supabase.from('registrations').select('*').order('created_at', { ascending: false })
+  const fetchRows = () => supabase.from('registrations').select('*').order('created_at', { ascending: false })
+  function applyResult({ data, error }) {
     if (error) setErr('Бүртгэл уншиж чадсангүй.')
     else setRows(data)
   }
-  useEffect(() => { load() }, [])
+  async function load() { applyResult(await fetchRows()) }
+  useEffect(() => {
+    let cancelled = false
+    fetchRows().then(res => { if (!cancelled) applyResult(res) })
+    return () => { cancelled = true }
+  }, [])
 
   async function setStatus(id, status) {
     setRows(rs => rs.map(r => (r.id === id ? { ...r, status } : r)))
